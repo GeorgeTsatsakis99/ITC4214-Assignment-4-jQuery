@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+
+        <style type="text/css">
+            .highlight_next {
+                background-color: #940d0d;
+            }
+
+            .highlight_clear {
+                background-color: #0f1113;
+            }
+        </style>
+
+    </head>
+    <title>Table</title>
+</head>
+
+<body>
+    <button data-value="highlight_next">next</button>
+    <button data-value="highlight_clear">clear</button>
+
+    <table id="data" border="1" cellspacing="1" width="500">
+        <tr>
+            <th scope="row"><input type="radio" class="radioBtn" name="selectRow" value="checked" /></th>
+            <td>First Name;</td>
+            <td>Last Name</td>
+            <td>Email Address</td>
+            <td>Phone</td>
+            <td>Office</td>
+        </tr>
+        <tr>
+            <th scope="row"><input type="radio" class="radioBtn" name="selectRow" value="checked" /></th>
+            <td>John</td>
+            <td>Smith</td>
+            <td>jsmith@sar.com</td>
+            <td>+30 210 1234567</td>
+            <td>PN 514</td>
+        </tr>
+        <tr>
+            <th scope="row"><input type="radio" class="radioBtn" name="selectRow" value="checked" /></th>
+            <td>Maria</td>
+            <td>Carras</td>
+            <td>mcarras@jsu.edu</td>
+            <td>+30 210 7654321</td>
+            <td>PM 413</td>
+        </tr>
+        <tr>
+            <th scope="row"><input type="radio" class="radioBtn" name="selectRow" value="checked" /></th>
+            <td>Helen</td>
+            <td>Antypas</td>
+            <td>hantypas@bdg.com</td>
+            <td>+30 2310 654321</td>
+            <td>PK 614</td>
+        </tr>
+        <tr>
+            <th scope="row"><input type="radio" class="radioBtn" name="selectRow" value="checked" /></th>
+            <td>Afroditi</td>
+            <td>Makri</td>
+            <td>amakri@hughes.edu</td>
+            <td>+30 2310 123456 </td>
+            <td>PJ 717</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        $("button").each(function () {
+            $(this).click(function () {
+                var button_value = $(this).data("value");
+                $("tr").each(function () {
+                    if ($(this).find("input[type='radio']").is(':checked')) {
+                        $(this).children("td").removeClass().addClass(button_value);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
